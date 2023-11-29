@@ -1,6 +1,7 @@
 > [!WARNING]
-> This repository has not been updated yet and will be receiving some TLC.
->
+> This repository has not been updated recently and will be receiving some TLC.
+> Please see: [Discord discussion on litestar-pg-redis-docker](https://discord.com/channels/919193495116337154/1154552571025956985/1154552571025956985)
+> 
 > If you would like to help, feel free to discuss in Discord or open a pull request.
 
 <!-- markdownlint-disable -->
