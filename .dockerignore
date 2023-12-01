@@ -1,4 +1,5 @@
 *
+!alembic
 !app
 !scripts
 !pyproject.toml

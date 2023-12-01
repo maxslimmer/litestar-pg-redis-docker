@@ -37,7 +37,7 @@ def _default(val: Any) -> str:
 
 
 engine = create_async_engine(
-    settings.db.URL,
+    str(settings.db.URL),
     echo=settings.db.ECHO,
     echo_pool=settings.db.ECHO_POOL,
     json_serializer=msgspec.json.Encoder(enc_hook=_default),

@@ -6,6 +6,7 @@ Create Date: 2023-07-06 03:46:54.476229
 
 """
 import litestar
+import litestar.contrib.sqlalchemy.types
 import sqlalchemy as sa
 from alembic import op
 

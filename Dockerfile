@@ -52,5 +52,4 @@ RUN addgroup --system --gid 1001 "app-user"
 RUN adduser --system --uid 1001 "app-user"
 USER "app-user"
 
-ENTRYPOINT ["/bin/sh", "-c"]
-CMD ["./scripts/entry"]
+CMD ["/bin/sh", "-c", "./scripts/entry"]

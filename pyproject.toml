@@ -13,16 +13,16 @@ alembic = "*"
 asyncpg = "*"
 httpx = "*"
 pydantic = "*"
+pydantic-settings = "*"
 python-dotenv = "*"
 saq = "*"
 sentry-sdk = "*"
 sqlalchemy = ">=2.0.0"
-litestar = { extras = ["redis", "cli"], git = "https://github.com/litestar-org/litestar", branch = "main" }
-uvloop = "*"
+litestar = { extras = ["redis", "cli", "sqlalchemy"], git = "https://github.com/litestar-org/litestar", branch = "main" }
+uvloop = { version = "*", markers = "sys_platform != 'win32'" }
 
 [tool.poetry.group.dev.dependencies]
 pytest-docker = "*"
-docker-compose = "*"
 pytest-cov = "*"
 pytest = "*"
 pytest-asyncio = "*"

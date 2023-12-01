@@ -5,7 +5,8 @@ settings class, except `AppSettings`.
 """
 from typing import Literal
 
-from pydantic import AnyUrl, BaseSettings, PostgresDsn
+from pydantic import AnyUrl, PostgresDsn
+from pydantic_settings import BaseSettings
 
 __all__ = [
     "APISettings",
@@ -26,6 +27,7 @@ class BaseEnvSettings(BaseSettings):
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
+        extra = "ignore"
 
 
 class AppSettings(BaseEnvSettings):
@@ -147,9 +149,7 @@ class DatabaseSettings(BaseEnvSettings):
     POOL_MAX_OVERFLOW: int = 10
     POOL_SIZE: int = 5
     POOL_TIMEOUT: int = 30
-    URL: PostgresDsn = PostgresDsn(  # pyright:ignore
-        "postgresql+asyncpg://postgres:postgres@localhost:5432/postgres", scheme="postgresql+asyncpg"
-    )
+    URL: PostgresDsn = PostgresDsn("postgresql+asyncpg://postgres:postgres@localhost:5432/postgres")  # pyright:ignore
 
 
 # noinspection PyUnresolvedReferences
@@ -168,7 +168,7 @@ class RedisSettings(BaseEnvSettings):
         env_prefix = "REDIS_"
         case_sensitive = True
 
-    URL: AnyUrl = AnyUrl("redis://localhost:6379/0", scheme="redis")  # pyright:ignore
+    URL: AnyUrl = AnyUrl("redis://localhost:6379/0")  # pyright:ignore
 
 
 # noinspection PyUnresolvedReferences
